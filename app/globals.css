@@ -67,3 +67,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'CasualSketch';
+  src: url('/font/CasualSketchy.ttf')
+
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/font/Helvetica.ttf')
+
+}

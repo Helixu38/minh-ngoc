@@ -81,7 +81,8 @@ const config = {
         '120': '51rem',
       },
       fontFamily:{
-        custom: ['CasualSketch'],
+        'casual-sketch': ['CasualSketch'],
+        'helvetica':['Helvetica']
       }
     },
   },

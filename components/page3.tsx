@@ -14,7 +14,7 @@ export default function page3() {
       >
       </Image> */}
       <div className="absolute left-120 bottom-66 text-base text-white">
-        <p className="me-67">
+        <p className="font-helvetica me-67">
           Many people go through life without realizing that certain experiences
           from their childhood were actually forms of abuse. Actions like harsh
           discipline, verbal humiliation, or neglect may have seemed normal at
