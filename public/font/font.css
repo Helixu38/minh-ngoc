@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'CasualSketch'; /* Replace with your font name */
+    src: url('/font/CasualSketchy.ttf') format('truetype'); /* Adjust the path as necessary */
+    font-weight: normal;
+    font-style: normal;
+}
