@@ -2,14 +2,17 @@
 import React, { useRef, useEffect, useState } from "react";
 
 export default function PosterCover() {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null); // Specify the type of the ref
   const isDrawing = useRef(false);
   const [color, setColor] = useState("#000000"); // Default color
   const [brushSize, setBrushSize] = useState(5); // Default brush size
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return; // Return early if canvas is null
+
     const context = canvas.getContext("2d");
+    if (!context) return; // Return early if context is null
 
     // Set canvas dimensions to match the container
     const resizeCanvas = () => {
@@ -20,7 +23,7 @@ export default function PosterCover() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    const startDrawing = (e) => {
+    const startDrawing = (e: MouseEvent) => {
       isDrawing.current = true;
       context.beginPath();
       context.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
@@ -28,7 +31,7 @@ export default function PosterCover() {
       context.strokeStyle = color; // Set brush color
     };
 
-    const draw = (e) => {
+    const draw = (e: MouseEvent) => {
       if (!isDrawing.current) return;
       context.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
       context.stroke();
@@ -56,13 +59,16 @@ export default function PosterCover() {
   // Clear the canvas
   const clearCanvas = () => {
     const canvas = canvasRef.current;
+    if (!canvas) return; // Return early if canvas is null
     const context = canvas.getContext("2d");
+    if (!context) return; // Return early if context is null
     context.clearRect(0, 0, canvas.width, canvas.height);
   };
 
   // Save the canvas as an image
   const saveCanvas = () => {
     const canvas = canvasRef.current;
+    if (!canvas) return; // Return early if canvas is null
     const backgroundImage = new Image();
     backgroundImage.src = '/img/postercover.png'; // Your background image URL
 
@@ -73,6 +79,12 @@ export default function PosterCover() {
       // Set the dimensions of the new canvas
       saveCanvas.width = canvas.width;
       saveCanvas.height = canvas.height;
+
+          // Check if saveContext is null
+    if (!saveContext) {
+      console.error("Failed to get canvas context for saving.");
+      return; // Exit if context is not available
+    }
 
       // Draw the background image
       saveContext.drawImage(backgroundImage, 0, 0, saveCanvas.width, saveCanvas.height);
@@ -112,7 +124,7 @@ export default function PosterCover() {
             min="1"
             max="50"
             value={brushSize}
-            onChange={(e) => setBrushSize(e.target.value)}
+            onChange={(e) => setBrushSize(Number(e.target.value))}
             className="ml-2"
           />
         </label>
