@@ -1,8 +1,11 @@
 import React from "react";
+import Image from "next/image";
 
-export default function Page1() {
+export default function page1() {
   return (
-    <div className="relative bg-[url('/img/itisntyourfault.png')] bg-contain bg-no-repeat h-screen bg-center">
+    <div className="relative bg-[url('/img/page1.png')] bg-contain bg-no-repeat h-screen bg-center">
+      <div className="absolute left-120 bottom-66 text-base text-white">
+      </div>
     </div>
   );
 }
