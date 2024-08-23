@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useEffect, useState } from "react";
 
-export default function PosterCover() {
+const DrawableCanvas = ({ backgroundImage }) => {
   const canvasRef = useRef(null);
   const isDrawing = useRef(false);
   const [color, setColor] = useState("#000000"); // Default color
@@ -70,12 +70,17 @@ export default function PosterCover() {
   };
 
   return (
-    <div className="relative bg-[url('/img/postercover.png')] bg-contain bg-no-repeat h-screen bg-center">
+    <div className="relative">
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 w-full h-full pointer-events-auto"
         style={{ zIndex: 10 }}
       />
+      {backgroundImage && (
+        <div
+          className={'absolute top-0 left-0 w-full h-full bg-cover ${backgroundImage}'}
+        />
+      )}
       <div className="fixed top-4 left-4 z-20 bg-white p-4 rounded shadow-lg">
         <h2 className="text-lg font-bold mb-2">Drawing Tools</h2>
         <label className="block mb-2">
@@ -113,4 +118,6 @@ export default function PosterCover() {
       </div>
     </div>
   );
-}
+};
+
+export default DrawableCanvas;
