@@ -63,10 +63,28 @@ export default function PosterCover() {
   // Save the canvas as an image
   const saveCanvas = () => {
     const canvas = canvasRef.current;
-    const link = document.createElement("a");
-    link.download = "drawing.png";
-    link.href = canvas.toDataURL();
-    link.click();
+    const backgroundImage = new Image();
+    backgroundImage.src = '/img/postercover.png'; // Your background image URL
+
+    backgroundImage.onload = () => {
+      const saveCanvas = document.createElement("canvas");
+      const saveContext = saveCanvas.getContext("2d");
+
+      // Set the dimensions of the new canvas
+      saveCanvas.width = canvas.width;
+      saveCanvas.height = canvas.height;
+
+      // Draw the background image
+      saveContext.drawImage(backgroundImage, 0, 0, saveCanvas.width, saveCanvas.height);
+      // Draw the current canvas content
+      saveContext.drawImage(canvas, 0, 0);
+
+      // Save the composite canvas as an image
+      const link = document.createElement("a");
+      link.download = "drawing.png";
+      link.href = saveCanvas.toDataURL("image/png");
+      link.click();
+    };
   };
 
   return (
