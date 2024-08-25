@@ -11,7 +11,7 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
   placeholder,
 }) => {
   return (
-    <div className="flex flex-col mb-8">
+    <div className="flex flex-col mb-8 mt-10">
       <label className="font-casual-sketch text-5xl text-blue mb-2">
         {question}
       </label>

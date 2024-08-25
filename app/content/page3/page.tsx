@@ -1,9 +1,62 @@
+"use client"
 import Link from "next/link";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import QuestionCheckbox from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
 
 const Page3 = () => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null); // Specify the type
+  const isDrawingRef = useRef(false);
+  const lastXRef = useRef(0);
+  const lastYRef = useRef(0);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return; // Check if canvas is null
+    const context = canvas.getContext("2d");
+    
+    // Set canvas dimensions
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const handleMouseDown = (event: MouseEvent) => {
+      isDrawingRef.current = true;
+      [lastXRef.current, lastYRef.current] = [event.offsetX, event.offsetY];
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (!isDrawingRef.current) return;
+      if (!context) return; // Check if context is null
+      context.strokeStyle = "black"; // Set drawing color
+      context.lineWidth = 2; // Set line width
+      context.beginPath();
+      context.moveTo(lastXRef.current, lastYRef.current);
+      context.lineTo(event.offsetX, event.offsetY);
+      context.stroke();
+      [lastXRef.current, lastYRef.current] = [event.offsetX, event.offsetY];
+    };
+
+    const handleMouseUp = () => {
+      isDrawingRef.current = false;
+    };
+
+    const handleMouseOut = () => {
+      isDrawingRef.current = false;
+    };
+
+    canvas.addEventListener("mousedown", handleMouseDown);
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("mouseup", handleMouseUp);
+    canvas.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      canvas.removeEventListener("mousedown", handleMouseDown);
+      canvas.removeEventListener("mousemove", handleMouseMove);
+      canvas.removeEventListener("mouseup", handleMouseUp);
+      canvas.removeEventListener("mouseout", handleMouseOut);
+    };
+  }, []);
+
   return (
     <>
       <div className="flex flex-col md:flex-row bg-white-background w-screen min-h-screen">
@@ -69,6 +122,7 @@ const Page3 = () => {
           </div>
         </div>
       </div>
+      <canvas ref={canvasRef} className="absolute top-0 left-0 z-0" />
     </>
   );
 };

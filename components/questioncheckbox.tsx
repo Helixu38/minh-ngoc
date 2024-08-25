@@ -14,7 +14,7 @@ const QuestionCheckbox: React.FC<QuestionCheckboxProps> = ({ question, answers, 
   const rightColumn = answers.slice(midIndex);
 
   return (
-    <div className="flex flex-col mb-8">
+    <div className="flex flex-col mb-8 z-10">
       <div className="flex font-casual-sketch text-2xl text-blue mb-4">
         {question}
       </div>

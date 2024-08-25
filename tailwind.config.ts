@@ -14,6 +14,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
+        'mobile':'320px',
         "2xl": "1400px",
       },
     },
@@ -84,7 +85,10 @@ const config = {
       },
       fontFamily:{
         'casual-sketch': ['CasualSketch'],
-        'helvetica':['Helvetica']
+        'helvetica':['Helvetica'],
+      },
+      fontSize:{
+        '3.5xl': '2rem',
       }
     },
   },
