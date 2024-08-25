@@ -1,14 +1,21 @@
 "use client"
 import Link from "next/link";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect ,useState } from "react";
 import QuestionCheckbox from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
+
 
 const Page3 = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null); // Specify the type
   const isDrawingRef = useRef(false);
   const lastXRef = useRef(0);
   const lastYRef = useRef(0);
+
+  const [style, setStyle] = useState("flex justify-start ms-10 z-10");
+  const changeStyle = () => {
+    console.log("you just clicked");
+    setStyle("text-black flex justify-start ms-10");
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -66,9 +73,9 @@ const Page3 = () => {
             child abuse, even though they are often not acknowledged as such?
           </div>
           <div className="mt-11 font-helvetica text-pink-300 flex flex-col">
-            <div className="flex justify-start ms-10">
+            <button onClick={changeStyle} className={style}>
               Corporal punishment in schools.
-            </div>
+            </button>
             <div className="flex justify-end me-6">
               Denying education for work or marriage.
             </div>
