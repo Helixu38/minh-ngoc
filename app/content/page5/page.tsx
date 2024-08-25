@@ -35,7 +35,7 @@ const Page5 = () => {
           <QuestionInput question="Can you share with us a time when you or a friend experienced something, like harsh discipline or neglect, that didn't seem like abuse then but later you realized it was?" />
           <QuestionInput question="How did not recognizing it at the time affect you or those of your friends?" />
           <div>
-            <Link className="flex justify-end me-5 mt-11" href="/content/page5">
+            <Link className="flex justify-end me-5 mt-11" href="/content/page6">
               <IconMathGreater />
             </Link>
           </div>

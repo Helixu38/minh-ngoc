@@ -12,7 +12,7 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
 }) => {
   return (
     <div className="flex flex-col mb-8">
-      <label className="font-casual-sketch text-2xl text-blue mb-2 me-5">
+      <label className="font-casual-sketch text-5xl text-blue mb-2">
         {question}
       </label>
       <textarea
