@@ -3,6 +3,7 @@ import React from "react";
 import QuestionCheckbox from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
 import QuestionInput from "@/components/questioninput";
+import AnimatedArrow from "@/components/animatedarrow";
 
 const Page6 = () => {
   return (
@@ -16,12 +17,11 @@ const Page6 = () => {
         <div className="ms-5 flex-1 flex flex-col">
           <QuestionInput question="What would you say to your younger self, knowing what you know now as an adults victim of child abuse?" />
           <QuestionInput question="What are some of the biggest challenges you face today as result of your past experience?" />
-          <div>
-            <Link className="flex justify-end me-5 mt-11" href="/content/page7">
-              <IconMathGreater />
-            </Link>
-          </div>
+          <div></div>
         </div>
+        <Link className="flex justify-end me-5 mt-11" href="/content/page7">
+          <AnimatedArrow></AnimatedArrow>
+        </Link>
       </div>
     </>
   );

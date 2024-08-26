@@ -5,6 +5,7 @@ import { IconMathGreater } from "@tabler/icons-react";
 import QuestionInputBiggerFont from "@/components/questioninputbiggerfont";
 import Circle from "@/components/circle";
 import DrawingCanvas from "@/components/drawcanvas";
+import AnimatedArrow from "@/components/animatedarrow";
 
 const Page8 = () => {
   return (
@@ -22,11 +23,11 @@ const Page8 = () => {
             <div className="relative lg:w-[27rem] lg:h-[37rem] md:w-[20rem] md:h-[30rem] sm:w-[20rem] sm:h-[30rem] min-[320px]:w-[15rem] min-[320px]:h-[26.5rem] max-[425px]:w-[15rem] max-[425px]:h-[26.5rem] min-[320px]:text-3xl max-[425px]:text-3xl  text-[#e5b4d6] bg-[#fff9f4] rounded-[60%_60%_60%_60%/60%_60%_60%_60%] flex justify-center items-center text-center p-5">
               <DrawingCanvas />
             </div>
-            <Link className="absolute right-0 bottom-0 me-5 mt-11" href="/content/page10">
-              <IconMathGreater />
-            </Link>
           </div>
         </div>
+        <Link className="flex justify-end me-5 mt-11" href="/content/page10">
+          <AnimatedArrow></AnimatedArrow>
+        </Link>
       </div>
     </>
   );

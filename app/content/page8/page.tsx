@@ -3,6 +3,7 @@ import React from "react";
 import QuestionCheckbox from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
 import QuestionInputBiggerFont from "@/components/questioninputbiggerfont";
+import AnimatedArrow from "@/components/animatedarrow";
 
 const Page8 = () => {
   return (
@@ -37,14 +38,11 @@ const Page8 = () => {
         <div className="relative ms-5 flex-1 flex flex-col">
           <div>
             <QuestionInputBiggerFont question="Write your thoughts here:" />
-            <Link
-              className="absolute right-0 bottom-0 me-5 mt-11"
-              href="/content/page9"
-            >
-              <IconMathGreater />
-            </Link>
           </div>
         </div>
+        <Link className="flex justify-end me-5 mt-11" href="/content/page9">
+          <AnimatedArrow></AnimatedArrow>
+        </Link>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import React from "react";
 import QuestionCheckbox from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
 import QuestionInput from "@/components/questioninput";
+import AnimatedArrow from "@/components/animatedarrow";
 
 const Page5 = () => {
   return (
@@ -35,11 +36,11 @@ const Page5 = () => {
           <QuestionInput question="Can you share with us a time when you or a friend experienced something, like harsh discipline or neglect, that didn't seem like abuse then but later you realized it was?" />
           <QuestionInput question="How did not recognizing it at the time affect you or those of your friends?" />
           <div>
-            <Link className="flex justify-end me-5 mt-11" href="/content/page6">
-              <IconMathGreater />
-            </Link>
           </div>
         </div>
+        <Link className="flex justify-end me-5 mt-11" href="/content/page6">
+          <AnimatedArrow></AnimatedArrow>
+        </Link>
       </div>
     </>
   );

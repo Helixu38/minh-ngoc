@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import QuestionRadio from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
+import AnimatedArrow from "@/components/animatedarrow";
 
 const Page4 = () => {
   return (
@@ -55,12 +56,11 @@ const Page4 = () => {
             responsive
           />
 
-          <div>
-            <Link className="flex justify-end me-5 mt-11" href="/content/page5">
-              <IconMathGreater />
-            </Link>
-          </div>
+          <div></div>
         </div>
+        <Link className="flex justify-end me-5 mt-11" href="/content/page5">
+          <AnimatedArrow></AnimatedArrow>
+        </Link>
       </div>
     </>
   );

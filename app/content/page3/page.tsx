@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import Link from "next/link";
-import React, { useRef, useEffect ,useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import QuestionCheckbox from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
-
+import AnimatedArrow from "@/components/animatedarrow";
 
 const Page3 = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null); // Specify the type
@@ -21,7 +21,7 @@ const Page3 = () => {
     const canvas = canvasRef.current;
     if (!canvas) return; // Check if canvas is null
     const context = canvas.getContext("2d");
-    
+
     // Set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -72,7 +72,7 @@ const Page3 = () => {
             How many of the following practices can you recognize as forms of
             child abuse, even though they are often not acknowledged as such?
           </div>
-          <div className="mt-11 font-helvetica text-pink-300 flex flex-col">
+          <div className="mt-11 font-helvetica text-pink-300 flex flex-col ">
             <button onClick={changeStyle} className={style}>
               Corporal punishment in schools.
             </button>
@@ -94,7 +94,7 @@ const Page3 = () => {
           </div>
         </div>
 
-        <div className="ms-5 flex-1 flex flex-col">
+        <div className="ms-5 flex-1 flex flex-col z-10">
           <QuestionCheckbox
             question="How aware are you of the long-term effects of child abuse on adults?"
             answers={[
@@ -124,10 +124,11 @@ const Page3 = () => {
             ]}
             responsive
           />
-          <div>
-            <Link className="flex justify-end me-5 mt-11" href="/content/page4"><IconMathGreater/></Link>
-          </div>
+          <div></div>
         </div>
+        <Link className="flex justify-end me-5 mt-11" href="/content/page4">
+          <AnimatedArrow></AnimatedArrow>
+        </Link>
       </div>
       <canvas ref={canvasRef} className="absolute top-0 left-0 z-0" />
     </>

@@ -1,27 +1,27 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        'mobile':'320px',
+        mobile: "320px",
         "2xl": "1400px",
       },
     },
     extend: {
       colors: {
-        'blue': '#1c40b8',
-        'white-background':'#fffaf5',
+        blue: "#1c40b8",
+        "white-background": "#fffaf5",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -70,29 +70,34 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        bounce: {
+          "0%, 100%": { transform: "translateY(-10%)" },
+          "50%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        bounce: "bounce 1s infinite",
       },
       spacing: {
-        '30': '10rem',
-        '66': '13.5rem',
-        '67': '19.5rem',
-        '100': '25rem',
-        '110': '30rem',
-        '120': '51rem',
+        "30": "10rem",
+        "66": "13.5rem",
+        "67": "19.5rem",
+        "100": "25rem",
+        "110": "30rem",
+        "120": "51rem",
       },
-      fontFamily:{
-        'casual-sketch': ['CasualSketch'],
-        'helvetica':['Helvetica'],
+      fontFamily: {
+        "casual-sketch": ["CasualSketch"],
+        helvetica: ["Helvetica"],
       },
-      fontSize:{
-        '3.5xl': '2rem',
-      }
+      fontSize: {
+        "3.5xl": "2rem",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { IconMathGreater } from "@tabler/icons-react";
+import AnimatedArrow from "@/components/animatedarrow";
 const Page10 = () => {
   return (
     <>
@@ -10,15 +11,12 @@ const Page10 = () => {
         <div className="relative ms-5 flex-1 flex flex-col">
           <div className="flex justify-center my-auto">
             <div>
-              <Link
-                className="absolute right-0 bottom-0 me-5 mt-11"
-                href="/content/page11"
-              >
-                <IconMathGreater />
-              </Link>
             </div>
           </div>
         </div>
+        <Link className="flex justify-end me-5 mt-11" href="/content/page10">
+          <AnimatedArrow></AnimatedArrow>
+        </Link>
       </div>
     </>
   );
