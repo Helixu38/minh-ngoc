@@ -16,7 +16,7 @@ const QuestionInput: React.FC<QuestionInputProps> = ({
         {question}
       </label>
       <textarea
-        className="font-helvetica p-2 h-60 text-blue resize-none bg-white-background focus:border-blue-500 focus:outline-none me-10"
+        className="font-helvetica p-2 h-[30rem] text-blue resize-none bg-white-background focus:border-blue-500 focus:outline-none me-10"
         placeholder={placeholder}
         style={{
           background:

@@ -3,6 +3,8 @@ import React from "react";
 import QuestionRadio from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
 import AnimatedArrow from "@/components/animatedarrow";
+import Image from "next/image";
+
 
 const Page4 = () => {
   return (
@@ -58,6 +60,14 @@ const Page4 = () => {
 
           <div></div>
         </div>
+        <Image
+          src="/img/shapetoy.png"
+          alt="Shape 1"
+          className="absolute right-5 bottom-[-10px]"
+          width={350}
+          height={350}
+          unoptimized
+        />
         <Link className="flex justify-end me-5 mt-11" href="/content/page5">
           <AnimatedArrow></AnimatedArrow>
         </Link>
