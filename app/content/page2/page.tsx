@@ -20,7 +20,7 @@ const Page2 = () => {
 
         <div className="relative ms-5 flex-1 flex flex-col items-center justify-center">
           <div className="flex justify-center">
-            <div className="font-helvetica text-white me-[50px] text-center text-lg bg-[#6486d0] rounded-md">
+            <div className="p-5 font-helvetica text-white me-[50px] text-justify text-lg bg-[#6486d0] rounded-md">
               Many people go through life without realizing that certain
               experiences from their childhood were actually forms of abuse.
               Actions like harsh discipline, verbal humiliation, or neglect
