@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from "react";
 import QuestionCheckbox from "@/components/questioncheckbox";
 import { IconMathGreater } from "@tabler/icons-react";
 import AnimatedArrow from "@/components/animatedarrow";
+import Image from "next/image";
 
 const Page3 = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null); // Specify the type
@@ -126,6 +127,13 @@ const Page3 = () => {
           />
           <div></div>
         </div>
+        <Image
+          src="/img/marimba.png"
+          alt="Shape 1"
+          className="absolute right-5 bottom-[-10px]"
+          width={350}
+          height={350}
+        />
         <Link className="flex justify-end me-5 mt-11" href="/content/page4">
           <AnimatedArrow></AnimatedArrow>
         </Link>
