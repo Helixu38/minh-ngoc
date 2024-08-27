@@ -8,8 +8,8 @@ import Image from "next/image";
 const Page1 = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row bg-[#eebed8] w-screen min-h-screen">
-        <div className="ms-5 flex-1 flex flex-col"></div>
+      <div className="relative flex flex-col md:flex-row bg-[#eebed8] w-screen min-h-screen overflow-hidden">
+        <div className=" ms-5 flex-1 flex flex-col"></div>
         <Image
           src="/img/texas.png"
           alt="Shape 1"
@@ -45,7 +45,62 @@ const Page1 = () => {
           width={500}
           height={500}
         />
-
+        <Image
+          src="/img/oblue.png"
+          alt="Shape 1"
+          className="absolute"
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/ogreen.png"
+          alt="Shape 1"
+          className="absolute left-[250px] top-[100px]"
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/swigly.png"
+          alt="Shape 1"
+          className="absolute left-[320px] top-[100px]"
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/shapeblue.png"
+          alt="Shape 1"
+          className="absolute left-[520px] "
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/swirlyblue.png"
+          alt="Shape 1"
+          className="absolute bottom-0 inset-x-0"
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/starorange.png"
+          alt="Shape 1"
+          className="absolute left-[150px] top-[150px]"
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/rockorange.png"
+          alt="Shape 1"
+          className="absolute right-[500px] top-[380px]"
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/phoneblue.png"
+          alt="Shape 1"
+          className="absolute left-[350px] top-[300px]"
+          width={500}
+          height={500}
+        />
         <div className="relative ms-5 flex-1 flex flex-col">
           <div className="flex justify-center my-auto">
             <div>

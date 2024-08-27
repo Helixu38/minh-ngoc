@@ -133,6 +133,8 @@ const Page3 = () => {
           className="absolute right-5 bottom-[-10px]"
           width={350}
           height={350}
+          loading="lazy"
+          unoptimized = {true}
         />
         <Link className="flex justify-end me-5 mt-11" href="/content/page4">
           <AnimatedArrow></AnimatedArrow>
