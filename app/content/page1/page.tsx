@@ -69,14 +69,21 @@ const Page1 = () => {
         <Image
           src="/img/shapeblue.png"
           alt="Shape 1"
-          className="absolute left-[520px] "
+          className="absolute left-[520px]"
           width={500}
           height={500}
         />
         <Image
           src="/img/swirlyblue.png"
           alt="Shape 1"
-          className="absolute bottom-0 inset-x-0"
+          className="absolute bottom-0 inset-x-0 z-10"
+          width={500}
+          height={500}
+        />
+        <Image
+          src="/img/phonepink.png"
+          alt="Shape 1"
+          className="absolute left-[80px] top-[290px] z-0"
           width={500}
           height={500}
         />
@@ -90,14 +97,14 @@ const Page1 = () => {
         <Image
           src="/img/rockorange.png"
           alt="Shape 1"
-          className="absolute right-[500px] top-[380px]"
+          className="absolute left-[400px] top-[380px]"
           width={500}
           height={500}
         />
         <Image
           src="/img/phoneblue.png"
           alt="Shape 1"
-          className="absolute left-[350px] top-[300px]"
+          className="absolute left-[250px] top-[300px]"
           width={500}
           height={500}
         />
